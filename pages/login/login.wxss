@@ -1,0 +1,76 @@
+/* pages/login/login.wxss */
+.welcome {
+  margin: 60rpx;
+  font-size: 52rpx;
+  font-weight: 700;
+  color: #333;
+}
+.login-form {
+  margin: 50rpx;
+}
+.login-form .account,
+.login-form .password {
+  margin: 20rpx 0;
+}
+.account view,
+.password view{
+  margin: 16rpx 12rpx;
+}
+.account input,
+.password input {
+  height: 80rpx;
+  border: 1px solid #ccc;
+  border-radius: 40rpx;
+  /* text-indent: 20rpx; */
+  padding: 0 30rpx;
+}
+.loginBtn {
+  width: 650rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: 100rpx auto 50rpx;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+  background-color: #D43C33;
+  border-radius: 40rpx;
+}
+.reset-pwd {
+  width: 300rpx;
+  margin: 0 auto;
+  text-align: center;
+  color: #5870da;
+  font-size: 24rpx;
+}
+.reset-pwd::after {
+  content: '';
+  display: inline-block;
+  width: 13rpx;
+  height: 13rpx;
+  margin-left: -3rpx;
+  border-top: 1px solid #666;
+  border-right: 1px solid #666;
+  transform: rotate(45deg);
+}
+.create-account {
+  position: absolute;
+  bottom: 30rpx;
+  left: 50%;
+  width: 600rpx;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 24rpx;
+}
+.create-account text:last-child {
+  color: rgb(88, 112, 218);
+}
+.create-account::after {
+  content: '';
+  display: inline-block;
+  width: 13rpx;
+  height: 13rpx;
+  margin-left: 3rpx;
+  border-top: 1px solid #666;
+  border-right: 1px solid #666;
+  transform: rotate(45deg);
+}

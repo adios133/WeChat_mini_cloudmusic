@@ -1,0 +1,53 @@
+
+<view class="bg" style="background-image: url({{song.al.picUrl}});">
+  <image src=""></image>
+</view>  
+<view class="container">
+  <!-- title -->
+  <view class="title">
+    <view class="song-name">{{song.name}}</view>
+    <view class="artists">
+      <text wx:for="{{song.ar}}" wx:key="id">{{item.name}}<text wx:if="{{index < song.ar.length - 1}}">/</text></text>
+    </view>
+  </view>
+  <!-- needle -->
+  <view class="needle">
+    <image src="/public/img/playing/styli2.png" class="{{isPlaying && 'play'}}"></image>
+  </view>
+  <!-- album dist -->
+  <view class="round-circle {{isPlaying && 'is-playing'}}">
+    <image class="dist" src="/public/img/playing/disc.png"></image>
+    <image class="cover" src="{{song.al.picUrl}}"></image>
+  </view>
+  <!-- progress bar -->
+  <view class="progress-bar">
+    <view class="current-time">
+      <text>{{currentTime}}</text>
+    </view>
+    <view class="p-bar">
+      <view class="line" style="width:{{width}}%"></view>
+      <view class="point" style="left:{{width *4.5}}rpx"></view>
+    </view>
+    <view class="total">
+      <text>{{total}}</text>
+    </view>
+  </view>
+  <!-- music controll -->
+  <view class="music-controll">
+    <view class="play-order">
+      <text class="iconfont icon-24gl-shuffle"></text>
+    </view>
+    <view class="pre-song">
+      <text class="iconfont icon-24gl-previous"></text>
+    </view>
+    <view class="play-song" bindtap="musicControll">
+      <text class="iconfont {{isPlaying ? 'icon-pause-1' : 'icon-play1'}}"></text>
+    </view>
+    <view class="next-song">
+      <text class="iconfont icon-24gl-next"></text>
+    </view>
+    <view class="play-list">
+      <text class="iconfont icon-24gl-playlist"></text>
+    </view>
+  </view>
+</view>

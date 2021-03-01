@@ -1,0 +1,26 @@
+.rec-detail {
+  margin: 20rpx 18rpx;
+}
+
+.rec-title {
+  display: block;
+  margin-bottom: 12rpx;
+  font-size: 40rpx;
+  color: #777;
+}
+.rec-content {
+  display: flex;
+  justify-content: space-between;
+}
+.rec-name {
+  float: left;
+  font-weight: 600;
+  font-size: 28rpx;
+}
+.rec-more {
+  float:right;
+  padding: 4rpx 12rpx;
+  font-size: 24rpx;
+  border:1rpx solid #333;
+  border-radius: 18rpx;
+}

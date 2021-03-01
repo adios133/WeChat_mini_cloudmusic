@@ -1,0 +1,20 @@
+<!-- 登录界面搭建 -->
+<view class="welcome">欢迎回来</view>
+<!-- 登陆表单 -->
+<view class="login-form">
+  <view class="account">
+    <view>手机账号：</view>
+    <input type="text" placeholder="请输入手机号" id="phone" bindinput="getFormData" focus="true"/>  
+  </view>
+  <view class="password">
+    <view>密码：</view>
+    <input type="password" placeholder="请输入密码" id="password" bindinput="getFormData" />
+  </view>
+  <view class="loginBtn" bindtap="logIn">登录</view>
+  <view class="reset-pwd">忘记密码？</view>
+</view>
+<!-- 创建账号，没有对应功能 -->
+<view class="create-account">
+  <text>还没有账号？</text>
+  <text>立即创建</text>
+</view>

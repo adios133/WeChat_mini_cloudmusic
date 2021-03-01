@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/recommend/recommend",
+    "pages/playing/playing",
+    "pages/profile/profile",
+    "pages/login/login",
+    "pages/video/video"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#D43C33",
+    "navigationBarTitleText": "CloudMusic",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#d43c33",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/public/img/tabbar/app_icons.png",
+        "selectedIconPath": "/public/img/tabbar/app_icons-a.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "视频",
+        "iconPath": "/public/img/tabbar/ziyuan.png",
+        "selectedIconPath": "/public/img/tabbar/ziyuan-a.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "个人中心",
+        "iconPath": "/public/img/tabbar/wode.png",
+        "selectedIconPath": "/public/img/tabbar/wode-a.png"
+      }
+    ]
+  },
+  "requiredBackgroundModes": ["audio"],
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

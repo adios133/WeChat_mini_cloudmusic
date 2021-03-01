@@ -1,0 +1,83 @@
+/* pages/video/video.wxss */
+.header {
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.header .iconfont {
+  width: 80rpx;
+  height: 80rpx;
+  font-size: 40rpx;
+}
+.header .search {
+  flex: 1;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin: 10rpx auto;
+  color: #ccc;
+  font-size: smaller;
+  border: 2rpx solid #ccc;
+  border-radius: 35rpx;
+}
+
+/* cut */
+
+.nav-scroll scroll-view {
+  display: flex;
+  height: 75rpx;
+  white-space: nowrap;
+}
+.nav-scroll .scroll-item {
+  margin: 14rpx;
+}
+.scroll-item text {
+  padding: 8rpx 6rpx;
+}
+.scroll-item .active {
+  border-bottom: 4rpx solid #D43C33;
+}
+
+/* video list */
+.video-list scroll-view {
+  /* 会自动减去tabbar高度 */
+  height: calc(100vh - 155rpx);
+}
+.video-list .video-item {
+  width: 700rpx;
+  margin: 10rpx auto;
+}
+.video-item image {
+  width: 100%;
+  height: 450rpx;
+  border-radius: 10rpx;
+}
+.video-item video {
+  width: 100%;
+  border-radius: 10rpx;
+}
+.video-item .title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 20rpx 6rpx;
+  font-size: smaller;
+  border-bottom: 1rpx solid #eee;
+}
+.creator-info {
+  padding: 16rpx 6rpx;
+}
+.creator-info image{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 12rpx;
+  vertical-align: middle;
+  border-radius: 30rpx;
+}
+.creator-info text {
+  font-size: smaller;
+  margin: 0 8rpx;
+}
+.creator-info .share-info {
+  float: right;
+}

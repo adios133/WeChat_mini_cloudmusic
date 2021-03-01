@@ -1,0 +1,150 @@
+page {
+  height: 100vh;
+  overflow: hidden;
+}
+.bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: #000;
+  filter: blur(60px);
+  -webkit-filter: blur(60px);
+  z-index: 0;
+}
+.bg image {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.3);
+}
+.container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+/* title */
+.container .title {
+  text-align: center;
+  color: #fff;
+}
+.title .artists {
+  font-size: smaller;
+  color: #fff;
+}
+.needle {
+  position: relative;
+}
+.needle image {
+  position: absolute;
+  top: -20rpx;
+  left: 200rpx;
+  width: 350rpx;
+  height: 350rpx;
+  transform: rotate(-35deg);
+  transform-origin: 172.3rpx 61.5rpx;
+  transition: transform .5s;
+  z-index: 4;
+}
+.needle .play {
+  transform: rotate(0deg);
+  transform-origin: 172.3rpx 61.5rpx;
+}
+@keyframes playsong {
+  from {
+    transform:rotate(0deg)
+  }
+  to {
+    transform:rotate(360deg)
+  }
+}
+.round-circle {
+  position: relative;
+  width: 600rpx;
+  height: 600rpx;
+  margin: 170rpx auto;
+}
+.is-playing {
+  animation: playsong 8s linear infinite ;
+  animation-delay: .5s;
+  animation-fill-mode: forwards;
+}
+.round-circle .dist{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+.round-circle .cover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 369rpx;
+  height: 369rpx;
+  transform: translate(-50%,-50%);
+}
+
+
+/* progresss bar  */
+.progress-bar {
+  position: absolute;
+  bottom: 160rpx;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.progress-bar .p-bar {
+  width: 450rpx;
+  height: 4rpx;
+  background-color: rgba(200,200,200,.6);
+}
+.progress-bar text {
+  color: #fff;
+  font-size: smaller;
+}
+.progress-bar .current-time,
+.progress-bar .total {
+  position: relative;
+  top: -22rpx;
+}
+.p-bar {
+  position: relative;
+}
+.p-bar .line {
+  width: 0;
+  height: 4rpx;
+  background-color: #d43c33;
+}
+.p-bar .point {
+  position: absolute;
+  left: 0;
+  width: 12rpx;
+  height: 12rpx;
+  margin-top: -8rpx;
+  background-color: #fff;
+  border-radius: 6rpx;
+}
+
+
+
+/* music controller */
+
+.music-controll {
+  position: absolute;
+  bottom: 30rpx;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 30rpx;
+}
+.music-controll text {
+  font-size: 40rpx;
+  color: #fff;
+}
+.music-controll .play-song text{
+  font-size: 100rpx;
+  position: relative;
+  top: -30rpx;
+}

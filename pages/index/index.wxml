@@ -1,0 +1,50 @@
+<!-- 轮播图 -->
+<swiper class="top-swiper" indicator-dots autoplay indicator-color="rgba(255, 255, 255, .3)" indicator-active-color="#D43C33" circular>
+  <swiper-item class="swiper-item" wx:for="{{banner}}" wx:key="bannerId">
+    <image src='{{item.pic}}' />
+  </swiper-item>
+</swiper>
+<!-- 推荐部分 -->
+<view class="recommend">
+  <view class="recommend-item" bindtap="getRecommend">
+    <text class="iconfont icon-rili"></text>
+    <text class="">每日推荐</text>
+  </view>
+  <view class="recommend-item">
+    <text class="iconfont icon-diantai"></text>
+    <text class="">私人FM</text>
+  </view>
+  <view class="recommend-item">
+    <text class="iconfont icon-gedan"></text>
+    <text class="">歌单</text>
+  </view>
+  <view class="recommend-item">
+    <text class="iconfont icon-paixing"></text>
+    <text class="">排行榜</text>
+  </view>
+  <view class="recommend-item">
+    <text class="iconfont icon-tuijian"></text>
+    <text class="">推荐</text>
+  </view>
+</view>
+<!-- 推荐列表 ,自定义组件，区分大小写 -->
+<NavHead title="推荐歌曲" name="为你精心推荐" />
+<!-- 下面横向滚动区域 -->
+<scroll-view class="rec-playlist" enable-flex scroll-x>
+  <view class="rec-playlist-item" wx:for="{{recommendList}}" wx:key="name">
+    <image src="{{item.picUrl}}" />
+    <text class="playlist-name">{{item.name}}</text>
+  </view>
+</scroll-view>
+<!-- 排行榜推荐 -->
+<NavHead title="排行榜" name="热歌风向标" />
+<swiper class="rank-page" circular previous-margin="50rpx" next-margin="50rpx">
+  <swiper-item class="rank-item" wx:for="{{rankList}}" wx:key="name">
+    <view class="title">{{item.name}}</view>
+    <view class="song-cart" wx:for="{{item.list}}" wx:for-item="song" wx:for-index="num" wx:key="id">
+      <image src='{{song.al.picUrl}}' class="song-img"/>
+      <text class="song-num">{{num+1}}</text>
+      <text class="song-name">{{song.name}}</text>
+    </view>
+  </swiper-item>
+</swiper>

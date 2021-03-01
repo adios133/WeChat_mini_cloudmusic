@@ -1,0 +1,27 @@
+<view class="title-cover">
+  <image src="/public/img/recommend/title_cover.jpg"></image>
+  <view class="time">
+    <text class="day">{{day}}</text>
+    <text class="month"> / {{month}}</text>
+  </view>
+</view>
+<view class="title">今日推荐</view>
+<scroll-view scroll-y enable-flex>
+  <view class="song-item" wx:for="{{songList}}" wx:key="id" bindtap="playSong" id="{{item.id}}">
+    <image src="{{item.album.picUrl}}"></image>
+    <view class="song-info">
+      <view class="song-title">
+        <text class="name">{{item.name}}</text>
+        <text class="alias" wx:if="{{item.alias[0]}}">({{item.alias[0]}})</text>
+      </view>
+      <view class="artists">
+        <text wx:for="{{item.artists}}" wx:for-item="artist" wx:for-index="idx" wx:key="id">{{artist.name}}<text wx:if="{{idx < item.artists.length-1}}">/</text>
+        </text>
+        <text> - {{item.album.name}}</text>
+      </view>
+    </view>
+    <view class="more">
+      <text class="iconfont icon-moreif"></text>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,76 @@
+<!-- 背景图片 -->
+<view class="bgc-img">
+  <image src="/public/img/profile/bgImg2.jpg"></image>
+</view>
+<!-- 用户头像及名字 -->
+<view class="user-cart" bindtap="userLogin">
+  <image src="{{userInfo ? userInfo.avatarUrl : '/public/img/profile/missing-face.png'}}"></image>
+  <!-- 由于初始化了一个userInfo:{}，所以不能直接判断userInfo这个对象（始终为真，或直接初始化null）可以判断里面是否有某个属性,现改为null了 -->
+  <text>{{userInfo ? userInfo.nickname : "游客"}}</text>
+</view>
+<!-- 用户卡片背景图片 -->
+<view class="vip-cart">
+  <text class="iconfont icon-vip"></text>
+  <text class="vip-name">CloudMusic会员</text>
+  <text class="purchase-vip">立即开通</text>
+  <view class="cart-detail">
+    <view class="vip-title">CloudMusic Union</view>
+    <text class="vip-desc">{{userInfo? userInfo.signature : '忽如一夜春风来，千树万树梨花开。'}}</text>
+  </view>
+</view>
+
+<!-- 下面部分 -->
+<view class="bottom-list" 
+bindtouchstart="startHandle"
+bindtouchmove="moveHandle"
+bindtouchend="endHandle"
+style="transform:{{moveDistance}};transition:{{animationY}}">
+  <!-- 曲线弯曲部分 -->
+  <image src="/public/img/profile/arc.png" class="top-circle"></image>
+  <view class="bottom-box">
+    <!-- my-bar部分 -->
+    <view class="my-bar">
+      <view class="bar-item">
+        <text class="iconfont icon-icon-mail"></text>
+        <text>我的消息</text>
+      </view>
+      <view class="bar-item">
+        <text class="iconfont icon-haoyou"></text>
+        <text>我的好友</text>
+      </view>
+      <view class="bar-item">
+        <text class="iconfont icon-wode"></text>
+        <text>个人主页</text>
+      </view>
+      <view class="bar-item">
+        <text class="iconfont icon-yifu"></text>
+        <text>个性装扮</text>
+      </view>
+    </view>
+    <!-- 列表部分 -->
+    <view class="cart-list">
+      <view class="recent-play">
+        <text>最近播放</text>
+      <scroll-view wx:if="{{recentPlay}}" scroll-x enable-flex class="recent-scroll">
+        <view wx:for="{{recentPlay}}" wx:key="id" class="music-item" bindtap="playSong" id="{{item.song.id}}">
+          <image src="{{item.song.al.picUrl}}"></image>
+          <text>{{item.song.name}} - {{item.song.ar[0].name}}</text>
+        </view>
+      </scroll-view>
+    </view>
+      <view class="cart-list-item">
+        <text>我的音乐</text>
+        <text>></text>
+      </view>
+      <view class="cart-list-item">
+        <text>我的收藏</text>
+        <text>></text>
+      </view>
+      <view class="cart-list-item">
+        <text>我的电台</text>
+        <text>></text>
+      </view>
+    </view>
+  </view>
+
+</view>

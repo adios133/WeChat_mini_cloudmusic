@@ -1,0 +1,37 @@
+<!-- header -->
+<view class="header">
+  <text class="iconfont icon-shipin-tianchong"></text>
+  <view class="search">大家都在搜</view>
+  <text class="iconfont icon-iconfontzhizuobiaozhun22"></text>
+</view>
+<!-- nav scroll -->
+<view class="nav-scroll">
+  <scroll-view scroll-x enable-flex scroll-into-view="{{'i' + currentGroupId}}" scroll-with-animation>
+    <view class="scroll-item" wx:for="{{videoGroupList}}" wx:key="id" id="{{'i' + item.id}}">
+      <text class="{{currentIndex === index ? 'active' : ''}}" bindtap="navSwitch" id="{{index}}">{{item.name}}</text>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- video list part -->
+<view class="video-list">
+  <scroll-view scroll-y bindscrolltolower="getMoreVideo" refresher-enabled bindrefresherrefresh="pullDown" refresher-triggered="{{isRefresh}}"> 
+    <view class="video-item" wx:for="{{videoData}}" wx:key="id">
+      <video src="{{item.data.urlInfo.url}}" wx:if="{{item.data.urlInfo.id === currentPlayId}}" 
+      bindtimeupdate="recordTime" bindplay="playHandle" id="{{item.data.urlInfo.id}}" autoplay bindended="playEnd"></video>
+      <image src="{{item.data.coverUrl}}" wx:else bindtap="playHandle" id="{{item.data.urlInfo.id}}"></image>
+      <view class="title">{{item.data.title}}</view>
+      <view class="creator-info">
+        <image src="{{item.data.creator.avatarUrl}}"></image>
+        <text class="creator-name">{{item.data.creator.nickname}}</text>
+        <view class="share-info">
+          <text class="iconfont icon-share"></text>
+          <text>{{item.data.shareCount}}</text>
+          <text class="iconfont icon-comment"></text>
+          <text>{{item.data.commentCount}}</text>
+          <text class="iconfont icon-moreif"></text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

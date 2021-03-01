@@ -1,0 +1,79 @@
+.title-cover {
+  overflow: hidden;
+  position: relative;
+  height: 380rpx;
+}
+.title-cover image{
+  width: 100%;
+  height: 420rpx;
+}
+.title-cover .time {
+  position: absolute;
+  left: 40rpx;
+  bottom: 30rpx;
+  color: #fff;
+  font-weight: 700;
+  font-size: 30rpx;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  vertical-align: bottom;
+  z-index: 2;
+}
+.time .day {
+  font-size: 70rpx;
+}
+
+
+/* title */
+.title {
+  padding: 20rpx;
+  font-weight: 600;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border-bottom: 1rpx solid #eee;
+}
+
+
+/* list */
+scroll-view {
+  height: calc(100vh - 466rpx);
+}
+.song-item {
+  display: flex;
+  margin: 0 16rpx;
+  padding: 16rpx 0;
+  /* justify-content: space-between; */
+}
+.song-item image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 15rpx;
+  border-radius: 10rpx;
+}
+.song-item .song-info {
+  flex: 1;
+}
+.song-info {
+  width: 550rpx;
+}
+.song-info .song-title {
+  margin-top: 4rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.song-title .alias {
+  color: #666;
+}
+.song-info .artists {
+  margin-top: 10rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: smaller;
+  color: #666;
+}
+.song-item .more {
+  width: 40rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}

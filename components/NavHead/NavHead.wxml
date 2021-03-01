@@ -1,0 +1,7 @@
+<view class="rec-detail">
+  <text class="rec-title">{{title}}</text>
+  <view class="rec-content" >
+    <text class="rec-name">{{name}}</text>
+    <text class="rec-more">查看更多</text>
+  </view>
+</view>
